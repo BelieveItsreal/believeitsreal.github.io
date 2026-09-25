@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 480" role="img" aria-label="Autonomous driving perception view with lane detection and object bounding boxes">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1b2a" />
+      <stop offset="0.55" stop-color="#16293b" />
+      <stop offset="1" stop-color="#1d3548" />
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#24303a" />
+      <stop offset="1" stop-color="#0e1319" />
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4ecfae" stop-opacity="0" />
+      <stop offset="1" stop-color="#4ecfae" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="haze" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4f52c9" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#4f52c9" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <rect width="720" height="480" fill="url(#sky)" />
+  <rect y="120" width="720" height="130" fill="url(#haze)" />
+
+  <g opacity="0.5">
+    <circle cx="96" cy="64" r="1.6" fill="#cfe3f5" />
+    <circle cx="188" cy="40" r="1.2" fill="#cfe3f5" />
+    <circle cx="286" cy="76" r="1.4" fill="#cfe3f5" />
+    <circle cx="430" cy="48" r="1.2" fill="#cfe3f5" />
+    <circle cx="566" cy="70" r="1.6" fill="#cfe3f5" />
+    <circle cx="648" cy="36" r="1.2" fill="#cfe3f5" />
+  </g>
+
+  <g opacity="0.75">
+    <path d="M0 248h720" stroke="#2b3f52" stroke-width="1.5" />
+    <path d="M40 248v-58h46v58zM104 248v-84h34v84zM156 248v-44h28v44z" fill="#16222e" />
+    <path d="M556 248v-70h40v70zM612 248v-50h30v50zM660 248v-88h38v88z" fill="#16222e" />
+    <g fill="#4ecfae" opacity="0.35">
+      <rect x="48" y="200" width="8" height="6" />
+      <rect x="66" y="214" width="8" height="6" />
+      <rect x="112" y="176" width="8" height="6" />
+      <rect x="566" y="190" width="8" height="6" />
+      <rect x="670" y="172" width="8" height="6" />
+    </g>
+  </g>
+
+  <path d="M360 248L112 480H608z" fill="url(#road)" />
+  <path d="M360 248L112 480H608z" fill="url(#beam)" />
+
+  <g stroke="#e8eef4" stroke-linecap="round" opacity="0.85">
+    <path d="M360 250L146 480" stroke-width="3" opacity="0.5" />
+    <path d="M360 250L574 480" stroke-width="3" opacity="0.5" />
+  </g>
+
+  <g fill="#f2f6fa" opacity="0.9">
+    <path d="M358 262h4l1 14h-6zM356 292h8l2 22h-12zM352 334h16l3 34h-22zM346 392h28l5 56h-38z" />
+  </g>
+
+  <g stroke="#4ecfae" stroke-width="2" fill="none" opacity="0.9">
+    <path d="M360 252L128 480" stroke-dasharray="10 12" opacity="0.55" />
+    <path d="M360 252L592 480" stroke-dasharray="10 12" opacity="0.55" />
+  </g>
+
+  <g>
+    <rect x="236" y="268" width="92" height="62" rx="6" fill="#0f1a24" stroke="#5a6b7c" />
+    <path d="M242 296h80" stroke="#43525f" />
+    <rect x="248" y="276" width="68" height="18" rx="4" fill="#233240" />
+    <circle cx="256" cy="322" r="7" fill="#0a0f14" stroke="#4a5866" />
+    <circle cx="308" cy="322" r="7" fill="#0a0f14" stroke="#4a5866" />
+    <rect x="246" y="300" width="14" height="6" rx="2" fill="#e0533a" />
+    <rect x="304" y="300" width="14" height="6" rx="2" fill="#e0533a" />
+
+    <g stroke="#4ecfae" stroke-width="2" fill="none">
+      <path d="M228 262h16M228 262v16M336 262h-16M336 262v16M228 338h16M228 338v-16M336 338h-16M336 338v-16" />
+    </g>
+    <rect x="228" y="242" width="72" height="16" rx="4" fill="#4ecfae" />
+    <text x="236" y="254" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#06231c">CAR 0.98</text>
+  </g>
+
+  <g>
+    <rect x="432" y="290" width="54" height="86" rx="6" fill="#0f1a24" stroke="#5a6b7c" />
+    <rect x="440" y="300" width="38" height="24" rx="4" fill="#233240" />
+    <circle cx="444" cy="368" r="6" fill="#0a0f14" stroke="#4a5866" />
+    <circle cx="474" cy="368" r="6" fill="#0a0f14" stroke="#4a5866" />
+    <g stroke="#8b8cf5" stroke-width="2" fill="none">
+      <path d="M424 284h16M424 284v16M494 284h-16M494 284v16M424 384h16M424 384v-16M494 384h-16M494 384v-16" />
+    </g>
+    <rect x="424" y="264" width="78" height="16" rx="4" fill="#8b8cf5" />
+    <text x="432" y="276" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#0d0f2a">TRUCK .91</text>
+  </g>
+
+  <g>
+    <rect x="150" y="300" width="26" height="58" rx="5" fill="none" stroke="#e3b341" stroke-width="2" stroke-dasharray="5 4" />
+    <rect x="150" y="282" width="86" height="15" rx="4" fill="#e3b341" />
+    <text x="157" y="293" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700" fill="#2b2003">PERSON .87</text>
+    <circle cx="163" cy="312" r="6" fill="#2a3542" />
+    <path d="M157 324h12v20h-12z" fill="#2a3542" />
+  </g>
+
+  <g opacity="0.85">
+    <rect x="20" y="20" width="158" height="74" rx="8" fill="#0b141c" fill-opacity="0.82" stroke="#2b3f52" />
+    <text x="34" y="42" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#4ecfae">PERCEPTION</text>
+    <rect x="34" y="52" width="94" height="5" rx="2.5" fill="#3d4d5c" />
+    <rect x="34" y="52" width="66" height="5" rx="2.5" fill="#4ecfae" />
+    <rect x="34" y="66" width="94" height="5" rx="2.5" fill="#3d4d5c" />
+    <rect x="34" y="66" width="44" height="5" rx="2.5" fill="#8b8cf5" />
+    <rect x="34" y="80" width="94" height="5" rx="2.5" fill="#3d4d5c" />
+    <rect x="34" y="80" width="80" height="5" rx="2.5" fill="#e3b341" />
+  </g>
+
+  <g opacity="0.85">
+    <rect x="556" y="20" width="144" height="56" rx="8" fill="#0b141c" fill-opacity="0.82" stroke="#2b3f52" />
+    <text x="570" y="42" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#8b8cf5">STEER  -2.4</text>
+    <text x="570" y="62" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#4ecfae">SPEED  42 KM/H</text>
+  </g>
+</svg>

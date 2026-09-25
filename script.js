@@ -3,6 +3,36 @@ const navLinks = document.querySelectorAll(".site-nav a");
 const observedSections = document.querySelectorAll(".section-observe");
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
+const themeToggle = document.querySelector(".theme-toggle");
+const siteHeader = document.querySelector(".site-header");
+const progressBar = document.querySelector(".scroll-progress");
+
+const applyTheme = (theme) => {
+  document.documentElement.dataset.theme = theme;
+  if (themeToggle) {
+    const isDark = theme === "dark";
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+  }
+};
+
+applyTheme(document.documentElement.dataset.theme || "light");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    localStorage.setItem("theme", next);
+    applyTheme(next);
+  });
+}
+
+document.querySelectorAll(".marquee-track").forEach((track) => {
+  track.append(...Array.from(track.children, (item) => {
+    const clone = item.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    return clone;
+  }));
+});
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
@@ -44,6 +74,22 @@ const sectionObserver = new IntersectionObserver(
 );
 
 observedSections.forEach((section) => sectionObserver.observe(section));
+
+const onScroll = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+
+  if (progressBar) {
+    progressBar.style.setProperty("--progress", `${Math.min(ratio, 1) * 100}%`);
+  }
+
+  if (siteHeader) {
+    siteHeader.classList.toggle("is-stuck", window.scrollY > 40);
+  }
+};
+
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
 
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {

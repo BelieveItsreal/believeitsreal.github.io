@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atanu Das | Software Engineer Portfolio</title>
+    <title>Atanu Das | Full Stack Engineer Portfolio</title>
     <meta
       name="description"
-      content="Professional portfolio of Atanu Das, Software Engineer focused on Java, Spring Boot, microservices, PostgreSQL, Docker, AWS, and backend platforms."
+      content="Professional portfolio of Atanu Das, Full Stack Engineer working with Java, Spring Boot, microservices, React, JavaScript, Vite, PostgreSQL, Docker, AWS, and Azure."
     />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      const storedTheme = localStorage.getItem("theme");
+      document.documentElement.dataset.theme =
+        storedTheme ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    </script>
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Atanu Das home">
         <span>AD</span>
         Atanu Das
       </a>
-
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
 
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
@@ -35,66 +40,146 @@
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.4" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 14.2A8.2 8.2 0 0 1 9.8 4a8.4 8.4 0 1 0 10.2 10.2z" />
+          </svg>
+        </button>
+
+        <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
     <main id="top">
       <section class="hero section-observe" id="home">
+        <div class="hero-glow" aria-hidden="true"></div>
+
         <div class="hero-content reveal">
-          <p class="eyebrow">Software Engineer / Java Backend Developer</p>
-          <h1>Atanu Das</h1>
+          <p class="eyebrow">Full Stack Engineer / Java + React</p>
+          <h1>Atanu&nbsp;Das</h1>
           <p class="hero-lead">
-            I build secure, scalable backend systems with Spring Boot,
-            PostgreSQL, microservices, Docker, AWS, and CI/CD.
+            I build products end to end — Spring Boot services and PostgreSQL
+            behind the API, React and Vite interfaces in front of it, shipped
+            with Docker, AWS, and CI/CD.
           </p>
 
           <div class="hero-actions">
             <a class="button button-primary magnetic" href="#projects">View Projects</a>
             <a class="button button-secondary magnetic" href="mailto:atanudas9263@gmail.com">Contact Me</a>
           </div>
+
+          <dl class="hero-facts">
+            <div>
+              <dt>Based in</dt>
+              <dd>Bengaluru, India</dd>
+            </div>
+            <div>
+              <dt>Focus</dt>
+              <dd>Full stack product engineering</dd>
+            </div>
+            <div>
+              <dt>Open to</dt>
+              <dd>Full stack engineering roles</dd>
+            </div>
+          </dl>
         </div>
 
         <aside class="hero-status reveal hover-card" aria-label="Current professional summary">
-          <p class="status-title">Current Role</p>
-          <strong>Software Engineer at GlobalLogic, Bangalore</strong>
-          <span>Enterprise backend platforms, analytics workflows, ERP services</span>
+          <p class="status-title"><span class="live-dot" aria-hidden="true"></span>Current Role</p>
+          <strong>Software Engineer at Albertsons Companies, Bengaluru</strong>
+          <span>Full stack work across digital commerce — React interfaces backed by Spring Boot services.</span>
           <div class="status-stack" aria-label="Primary technologies">
             <span>Java</span>
             <span>Spring Boot</span>
+            <span>Spring Security</span>
+            <span>React</span>
             <span>PostgreSQL</span>
-            <span>Docker</span>
-            <span>AWS</span>
+            <span>Azure</span>
+          </div>
+
+          <div class="status-split" aria-hidden="true">
+            <div>
+              <p>Frontend</p>
+              <span class="bar"><i style="--fill: 46%"></i></span>
+            </div>
+            <div>
+              <p>Backend</p>
+              <span class="bar bar-alt"><i style="--fill: 54%"></i></span>
+            </div>
           </div>
         </aside>
+      </section>
+
+      <section class="marquee-band" aria-label="Technology stack">
+        <div class="marquee" data-direction="forward">
+          <ul class="marquee-track">
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/java/java-original.svg" alt="" loading="lazy" />Java</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/spring/spring-original.svg" alt="" loading="lazy" />Spring Boot</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/hibernate/hibernate-original.svg" alt="" loading="lazy" />Hibernate</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/postgresql/postgresql-original.svg" alt="" loading="lazy" />PostgreSQL</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/mysql/mysql-original.svg" alt="" loading="lazy" />MySQL</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/docker/docker-original.svg" alt="" loading="lazy" />Docker</li>
+            <li><img class="logo-adapt" src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" loading="lazy" />AWS</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/azure/azure-original.svg" alt="" loading="lazy" />Azure</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/jenkins/jenkins-original.svg" alt="" loading="lazy" />Jenkins</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/maven/maven-original.svg" alt="" loading="lazy" />Maven</li>
+          </ul>
+        </div>
+
+        <div class="marquee" data-direction="reverse">
+          <ul class="marquee-track">
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/react/react-original.svg" alt="" loading="lazy" />React</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/vitejs/vitejs-original.svg" alt="" loading="lazy" />Vite</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/html5/html5-original.svg" alt="" loading="lazy" />HTML5</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/css3/css3-original.svg" alt="" loading="lazy" />CSS3</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/git/git-original.svg" alt="" loading="lazy" />Git</li>
+            <li><img class="logo-adapt" src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/github/github-original.svg" alt="" loading="lazy" />GitHub Actions</li>
+            <li><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@master/icons/junit/junit-original.svg" alt="" loading="lazy" />JUnit</li>
+          </ul>
+        </div>
       </section>
 
       <section class="section about section-observe" id="about">
         <div class="section-inner two-column">
           <div class="section-title reveal">
             <p class="eyebrow">About</p>
-            <h2>Backend engineer focused on clarity, performance, and reliable delivery.</h2>
+            <h2>Full stack engineer, from the database to the browser.</h2>
           </div>
 
           <div class="about-copy reveal">
             <p>
-              I work on production backend systems where clean APIs, secure
-              access, data consistency, and deployment discipline matter. My
-              experience includes Spring Boot REST APIs, microservices,
-              PostgreSQL optimization, JWT/OAuth2 authentication, Docker, AWS,
-              Jenkins, and GitHub Actions.
+              I work on production systems where clean APIs, secure access, data
+              consistency, and a usable interface all have to land together. On
+              the backend that means Spring Boot REST services, microservices,
+              PostgreSQL optimization, and JWT/OAuth2. On the frontend it means
+              React components and hooks, JavaScript (ES6+), HTML5 and CSS3,
+              responsive layouts, and Vite tooling — managing UI state and
+              consuming those same APIs. Both sides ship through Docker, AWS,
+              Azure, Jenkins, and GitHub Actions.
             </p>
 
             <div class="metric-row">
               <article class="metric-card hover-card">
                 <strong>30%</strong>
-                <span>report generation improvement through query optimization</span>
+                <span>faster report generation through PostgreSQL query optimization</span>
               </article>
               <article class="metric-card hover-card">
-                <strong>2024</strong>
-                <span>started professional engineering work at GlobalLogic</span>
+                <strong>2+ yrs</strong>
+                <span>shipping production systems across finance, ERP, and retail commerce</span>
               </article>
               <article class="metric-card hover-card">
                 <strong>1</strong>
-                <span>Spot Award for Best Team Performer</span>
+                <span>Spot Award for Best Team Performer at GlobalLogic</span>
               </article>
             </div>
           </div>
@@ -107,16 +192,55 @@
             <p class="eyebrow">Experience</p>
             <h2>Professional Work</h2>
             <p>
-              Current role at GlobalLogic, Bangalore as Software Engineer from
-              August 2024 to present.
+              Currently a Software Engineer at Albertsons Companies in
+              Bengaluru, after two years building enterprise backend platforms
+              at GlobalLogic.
             </p>
           </div>
 
           <div class="timeline">
+            <article class="timeline-item is-current reveal hover-card">
+              <div class="timeline-meta">
+                <div>
+                  <span>Albertsons Companies</span>
+                  <p class="timeline-role">Software Engineer, Bengaluru</p>
+                </div>
+                <time>Sep 2026 - Present</time>
+              </div>
+              <div class="timeline-content">
+                <img src="images/albertsons-digital.svg" alt="Digital commerce platform interface illustration" />
+                <div>
+                  <p class="card-label">Current Work</p>
+                  <h3>Digital Commerce Platform</h3>
+                  <p>
+                    Full stack work on customer-facing grocery commerce —
+                    building React interfaces on top of the Spring Boot services
+                    that power them.
+                  </p>
+                  <ul>
+                    <li>Build React components and views in a Vite-based frontend, wired to REST APIs.</li>
+                    <li>Develop and extend Spring Boot services and their PostgreSQL data models.</li>
+                    <li>Own features end to end, from API contract through UI state to deployment.</li>
+                  </ul>
+                  <div class="tag-row">
+                    <span>React</span>
+                    <span>JavaScript</span>
+                    <span>Vite</span>
+                    <span>Spring Boot</span>
+                    <span>PostgreSQL</span>
+                    <span>Azure</span>
+                  </div>
+                </div>
+              </div>
+            </article>
+
             <article class="timeline-item reveal hover-card">
               <div class="timeline-meta">
-                <span>GlobalLogic</span>
-                <time>Aug 2024 - Present</time>
+                <div>
+                  <span>GlobalLogic</span>
+                  <p class="timeline-role">Software Engineer, Bengaluru</p>
+                </div>
+                <time>Aug 2024 - Sep 2026</time>
               </div>
               <div class="timeline-content">
                 <img src="images/GlobalPLproject.png" alt="Global P&L analytics project screenshot" />
@@ -132,14 +256,24 @@
                     <li>Optimized PostgreSQL queries to improve report generation by about 30%.</li>
                     <li>Used JWT/OAuth2, Docker, AWS, Jenkins, and GitHub Actions for secure delivery.</li>
                   </ul>
+                  <div class="tag-row">
+                    <span>Spring Boot</span>
+                    <span>PostgreSQL</span>
+                    <span>Docker</span>
+                    <span>AWS</span>
+                    <span>Jenkins</span>
+                  </div>
                 </div>
               </div>
             </article>
 
             <article class="timeline-item reveal hover-card">
               <div class="timeline-meta">
-                <span>Hitachi Domain</span>
-                <time>Enterprise ERP</time>
+                <div>
+                  <span>GlobalLogic &middot; Hitachi</span>
+                  <p class="timeline-role">Enterprise ERP domain</p>
+                </div>
+                <time>2024 - 2026</time>
               </div>
               <div class="timeline-content">
                 <img src="images/ERPproject.png" alt="Global ERP application project screenshot" />
@@ -155,6 +289,12 @@
                     <li>Handled validation logic, requirements analysis, and release readiness.</li>
                     <li>Supported integration testing and critical defect resolution for production stability.</li>
                   </ul>
+                  <div class="tag-row">
+                    <span>Java</span>
+                    <span>Microservices</span>
+                    <span>JPA</span>
+                    <span>JUnit</span>
+                  </div>
                 </div>
               </div>
             </article>
@@ -197,16 +337,19 @@
             <article class="project-card reveal hover-card">
               <img src="images/flightProject.png" alt="Flight booking system screenshot" />
               <div class="project-card-body">
-                <p class="card-label">Backend System</p>
+                <p class="card-label">Full Stack</p>
                 <h3>SkyRoute Flight Booking System</h3>
                 <p>
-                  Flight booking backend with flight management, search,
-                  filtering, pagination, and seat inventory design.
+                  Flight booking platform with flight management, search,
+                  filtering, pagination, and seat inventory design — with a
+                  React frontend in progress.
                 </p>
                 <div class="tag-row">
                   <span>Java</span>
                   <span>Spring Boot</span>
                   <span>MySQL</span>
+                  <span>React</span>
+                  <span>Vite</span>
                 </div>
                 <a href="https://github.com/BelieveItsreal/flight-service" target="_blank" rel="noreferrer">
                   View repository
@@ -216,8 +359,6 @@
 
             <article class="project-card reveal hover-card">
               <div class="drive-preview" aria-hidden="true">
-                <span class="lane lane-one"></span>
-                <span class="lane lane-two"></span>
                 <span class="sensor sensor-one"></span>
                 <span class="sensor sensor-two"></span>
                 <span class="sensor sensor-three"></span>
@@ -247,25 +388,33 @@
         <div class="section-inner two-column">
           <div class="section-title reveal">
             <p class="eyebrow">Skills</p>
-            <h2>Stack I use to ship backend systems.</h2>
+            <h2>The stack I use to ship full stack products.</h2>
+            <p>
+              Backend depth in the Java and Spring ecosystem, paired with the
+              React and JavaScript tooling I use on the interface side.
+            </p>
           </div>
 
           <div class="skill-groups reveal">
             <article>
-              <h3>Languages</h3>
-              <p>Java, SQL</p>
+              <h3><span class="dot dot-back"></span>Languages</h3>
+              <p>Java, JavaScript, SQL</p>
             </article>
             <article>
-              <h3>Backend</h3>
+              <h3><span class="dot dot-back"></span>Backend</h3>
               <p>Spring Boot, Spring Security, REST APIs, Microservices, JPA, Hibernate</p>
             </article>
             <article>
-              <h3>Database & Cloud</h3>
-              <p>PostgreSQL, Docker, AWS EC2, AWS S3, Jenkins, GitHub Actions</p>
+              <h3><span class="dot dot-front"></span>Frontend</h3>
+              <p>React, JavaScript (ES6+), Vite, HTML5, CSS3, Responsive UI</p>
             </article>
             <article>
-              <h3>Tools</h3>
-              <p>JUnit, Git, Maven, JWT, OAuth2, CI/CD</p>
+              <h3><span class="dot dot-back"></span>Database &amp; Cloud</h3>
+              <p>PostgreSQL, MySQL, Docker, AWS EC2, AWS S3, Microsoft Azure</p>
+            </article>
+            <article>
+              <h3><span class="dot dot-front"></span>DevOps &amp; Tools</h3>
+              <p>Jenkins, GitHub Actions, Git, Maven, JUnit, JWT, OAuth2, CI/CD</p>
             </article>
           </div>
         </div>
